@@ -8,7 +8,7 @@ public class RentalService {
     private Double pricePerHour;
     private Double pricePerDay;
 
-    private BrazilTaxService taxService;
+    private TaxService taxService;
 
     public RentalService(Double pricePerHour, Double pricePerDay) {
         taxService = new BrazilTaxService();
