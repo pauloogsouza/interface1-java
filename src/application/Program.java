@@ -2,6 +2,7 @@ package application;
 
 import model.entities.CarRental;
 import model.entities.Vehicle;
+import model.services.BrazilTaxService;
 import model.services.RentalService;
 
 import java.text.ParseException;
@@ -29,7 +30,7 @@ public class Program {
         double pricePerDay = sc.nextDouble();
 
         CarRental carRental = new CarRental(start, finish, new Vehicle(carModel));
-        RentalService rentalService = new RentalService(pricePerHour, pricePerDay);
+        RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrazilTaxService());
         rentalService.processInvoice(carRental);
 
         System.out.println();
